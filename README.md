@@ -1,4 +1,4 @@
-#Recruitment-check-bot
+# Recruitment-check-bot
 > Are you frustrated to check your Application Status after interviewing? Fret Not! This is a python script to automatically login in to your Accenture in India account and print your current status on 30 Seconds interval to your console. So that you never miss an update from them ;)
 
 # Working-Screenshot
