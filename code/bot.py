@@ -4,10 +4,11 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver import ActionChains
 import time
+import sys
 from selenium.webdriver.common.keys import Keys
 
-username = "username@hotmail.com" #Enter your accenture username
-password = "username@1" #Enter your accenture password
+username = sys.argv[1] #Enter your accenture username through Command Line
+password = sys.argv[2] #Enter your accenture password through Command Line
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('window-size=1920x1080')
@@ -31,7 +32,6 @@ while(True):
     if previous_value:
         time.sleep(22)
         if (len(current_value.text) != len(previous_value)):
-            #a new value is present.
             #time.sleep(22)
             print("New Status :", current_value.text)
             previous_value = current_value.text
@@ -39,7 +39,6 @@ while(True):
             #document_upload = "Document Upload- Active" if current_value.text.find("advanced stage") else "Check Portal"
             print("Current Status :", current_value.text)
     else:
-        #first time running the loop.
         time.sleep(22)
         #document_upload = "Document Upload- Active" if current_value.text.find("advanced stage") else "Check Portal"
         print("Current Status :", current_value.text)
